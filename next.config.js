@@ -1,7 +1,8 @@
+
 const sanityClient = require('@sanity/client')
 const client = sanityClient({
-  projectId: process.env.projectId, // you can find this in sanity.json
-  dataset: process.env.dataset, // or the name you chose in step 1
+  projectId: 'anokeucs', // you can find this in sanity.json
+  dataset: 'production', // or the name you chose in step 1
   useCdn: true // `false` if you want to ensure fresh data
 })
 
