@@ -17,8 +17,10 @@
   "devDependencies": {},
   "scripts": {
     "dev": "node server.js",
+    "pre-build": "node build",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "export": "next export"
   },
   "author": "",
   "license": "ISC"
