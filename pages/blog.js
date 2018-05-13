@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
+import Link from 'next/link'
 import client from '../client'
 const builder = imageUrlBuilder(client)
-console.log(client)
 function urlFor(source) {
   return builder.image(source)
 }
@@ -26,6 +26,7 @@ const BlogPost = ({ title = 'No title', name = 'No name', categories = [], autho
     projectId={client.clientConfig.projectId}
     dataset={client.clientConfig.dataset}
   />
+  <Link href="/"><a>Back to home</a></Link>
 </div>
 
 BlogPost.getInitialProps = async ({ query: { slug } }) => {
