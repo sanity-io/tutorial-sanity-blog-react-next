@@ -20,7 +20,7 @@ const CommaJoiner = ({ list = [], conjuction = 'and', separator = ',' }) => <Fra
 
 const BlogPost = ({ title = 'No title', name = 'No name', categories = [], authorImage = {}, body = [], _updatedAt = '' }) => <div>
   <h1>{title}</h1>
-  By {name}. Updated {format(_updatedAt, 'DD. MMMM, YYYY')}. {categories && <span>Posted in <CommaJoiner list={categories} /></span>}
+  By {name}. Updated {format(_updatedAt, 'DD. MMMM, YYYY')}. {categories.length && <span>Posted in <CommaJoiner list={categories} /></span>}
   <div><img src={urlFor(authorImage).width(50).url()} /></div>
   <BlockContent
     blocks={body}
