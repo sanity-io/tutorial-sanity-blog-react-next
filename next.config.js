@@ -1,10 +1,4 @@
-
-const sanityClient = require('@sanity/client')
-const client = sanityClient({
-  projectId: 'anokeucs', // you can find this in sanity.json
-  dataset: 'production', // or the name you chose in step 1
-  useCdn: true // `false` if you want to ensure fresh data
-})
+const client = require('./client')
 
 module.exports = {
   exportPathMap: async function (defaultPathMap) {
