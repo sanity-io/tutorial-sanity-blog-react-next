@@ -2,7 +2,9 @@ import React, { Fragment } from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
+import { format } from 'date-fns'
 import client from '../client'
+
 const builder = imageUrlBuilder(client)
 function urlFor(source) {
   return builder.image(source)
@@ -16,9 +18,9 @@ const CommaJoiner = ({ list = [], conjuction = 'and', separator = ',' }) => <Fra
   </span>)
 }</Fragment>
 
-const BlogPost = ({ title = 'No title', name = 'No name', categories = [], authorImage = {}, body = [] }) => <div>
+const BlogPost = ({ title = 'No title', name = 'No name', categories = [], authorImage = {}, body = [], _updatedAt = '' }) => <div>
   <h1>{title}</h1>
-  By {name}. {categories && <span>Posted in <CommaJoiner list={categories} /></span>}
+  By {name}. Updated {format(_updatedAt, 'DD. MMMM, YYYY')}. {categories && <span>Posted in <CommaJoiner list={categories} /></span>}
   <div><img src={urlFor(authorImage).width(50).url()} /></div>
   <BlockContent
     blocks={body}
@@ -30,18 +32,14 @@ const BlogPost = ({ title = 'No title', name = 'No name', categories = [], autho
 </div>
 
 BlogPost.getInitialProps = async ({ query: { slug } }) => {
-  const { title,
-    name,
-    categories,
-    authorImage,
-    body } = await client.fetch(`*[slug.current == $slug][0]{
+  return await client.fetch(`*[slug.current == $slug][0]{
       title,
       "name": author->name,
       "categories": categories[]->title,
       "authorImage": author->image,
-      body
+      body,
+      _updatedAt
     }`, { slug })
-  return { title, name, categories, authorImage, body }
 }
 
 export default BlogPost
