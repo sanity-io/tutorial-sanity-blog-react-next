@@ -1,9 +1,10 @@
 # Blogging with Sanity and Next.js
 
-[Read the tutorial](https://sanity.io/blog/build-your-own-blog-with-sanity-and-next-js)
+[Read the tutorial](https://sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=github&github_campaing=rbt)
+
 ## Get started
 
-```
+```sh
 # Install the Sanity command line interface
 ~/
 > npm i -g @sanity/cli
@@ -25,4 +26,12 @@
 > npm run dev
 ```
 
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/sanity-io/sanity-blog-tutorial/tree/master)
+## Deploy as a static site
+
+[Read the tutorial](https://sanity.io/blog/tutorial-export-your-sanity-backed-blog-in-next-js-and-host-it-on-netlify?utm_source=github&utm_campaign=netlifyexport)
+
+```sh
+~/sanity-blog-tutorial
+npm run export
+# exports your site as static files in /out
+```
