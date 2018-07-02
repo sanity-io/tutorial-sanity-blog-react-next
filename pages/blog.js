@@ -32,7 +32,7 @@ const BlogPost = ({ title = 'No title', name = 'No name', categories = [], autho
 </div>
 
 BlogPost.getInitialProps = async ({ query: { slug } }) => {
-  return await client.fetch(`*[slug.current == $slug][0]{
+  return await client.fetch(`*[_type == "post" && slug.current == $slug][0]{
       title,
       "name": author->name,
       "categories": categories[]->title,
