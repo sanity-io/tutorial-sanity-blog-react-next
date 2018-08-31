@@ -1,6 +1,6 @@
 # Blogging with Sanity and Next.js
 
-[Read the tutorial](https://sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=github&github_campaing=rbt)
+[Read the tutorial](https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=github&github_campaing=rbt)
 
 ## Get started
 
@@ -28,7 +28,7 @@
 
 ## Deploy as a static site
 
-[Read the tutorial](https://sanity.io/blog/tutorial-export-your-sanity-backed-blog-in-next-js-and-host-it-on-netlify?utm_source=github&utm_campaign=netlifyexport)
+[Read the tutorial](https://www.sanity.io/blog/tutorial-host-your-sanity-based-next-js-project-on-netlify?utm_source=github&utm_campaign=netlifyexport)
 
 ```sh
 ~/sanity-blog-tutorial
