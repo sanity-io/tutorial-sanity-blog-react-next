@@ -1,4 +1,6 @@
 node_modules
 dist
 .next
-out.DS_Store
+out
+.DS_Store
+sanitytutorialblog
