@@ -12,7 +12,7 @@ const Index = ({ posts = [] }) => (
       ({ _id, title = "", slug = "", _updatedAt = "" }) =>
         slug && (
           <li key={_id}>
-            <Link prefetch href={`/blog/${slug}`}>
+            <Link prefetch href={`/blog/${slug.current}`}>
               <a>{title}</a>
             </Link>{" "}
             ({format(_updatedAt, "DD. MMMM, YYYY")})
