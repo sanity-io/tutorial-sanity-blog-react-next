@@ -15,7 +15,6 @@ module.exports = {
         )
       )
       .catch(console.error)
-      console.log({paths})
     return paths
   }
 }
