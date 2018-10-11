@@ -1,13 +1,11 @@
 import React from "react";
 import { format } from "date-fns";
-import {Link} from "../routes";
-import client from "../client";
+import {Link} from "../../routes";
+import client from "../../client";
 
 const Index = ({ posts = [] }) => (
   <div>
-    <h1>Welcome to a blog!</h1>
-    <h2>Posts</h2>
-
+    <h1>Blog archive</h1>
     {posts.map(
       ({ _id, title = "", slug = "", _updatedAt = "" }) =>
         slug && (

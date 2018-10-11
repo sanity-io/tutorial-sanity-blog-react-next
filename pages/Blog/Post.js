@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
-import Link from 'next/link'
+import Error from 'next/error'
+import {Link} from '../../routes'
 import { format } from 'date-fns'
-import client from '../client'
+import client from '../../client'
 
 const builder = imageUrlBuilder(client)
 function urlFor(source) {
@@ -28,18 +29,22 @@ const BlogPost = ({ title = 'No title', name = 'No name', categories = [], autho
     projectId={client.clientConfig.projectId}
     dataset={client.clientConfig.dataset}
   />
-  <Link href="/"><a>Back to home</a></Link>
+  <Link route="/"><a>Back to home</a></Link>
 </div>
 
-BlogPost.getInitialProps = async ({ query: { slug } }) => {
-  return await client.fetch(`*[_type == "post" && slug.current == $slug][0]{
-      title,
-      "name": author->name,
-      "categories": categories[]->title,
-      "authorImage": author->image,
-      body,
-      _updatedAt
-    }`, { slug })
+BlogPost.getInitialProps = async ({ res, query: { slug } }) => {
+  if(slug) {
+    return await client.fetch(`*[_type == "post" && slug.current == $slug][0]{
+        title,
+        "name": author->name,
+        "categories": categories[]->title,
+        "authorImage": author->image,
+        body,
+        _updatedAt
+      }`, { slug })
+  }
+  const statusCode = res.statusCode > 200 ? res.statusCode : false
+  return <Error statusCode={statusCode} />
 }
 
 export default BlogPost
