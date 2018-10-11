@@ -10,6 +10,7 @@
     "date-fns": "1.29.0",
     "http": "0.0.0",
     "next": "7.0.1",
+    "next-routes": "^1.4.2",
     "path-match": "1.2.4",
     "react": "16.5.2",
     "react-dom": "16.5.2",
