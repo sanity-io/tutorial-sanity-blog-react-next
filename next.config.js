@@ -9,12 +9,13 @@ module.exports = {
           (acc, slug) => ({
             '/': { page: '/' },
             ...acc,
-            [`/blog/${slug}`]: { page: '/Blog/Post', query: { slug } }
+            [`/blog/${slug}`]: { page: 'Blog/Post', query: { slug } }
           }),
           defaultPathMap
         )
       )
       .catch(console.error)
+      console.log({paths})
     return paths
   }
 }

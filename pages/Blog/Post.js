@@ -13,7 +13,7 @@ function urlFor(source) {
 
 export default class BlogPost extends PureComponent {
   static getInitialProps = async ({ res, query: { slug } }) => {
-    const post = await client.fetch(
+    const post = slug ? await client.fetch(
       `*[_type == "post" && slug.current == $slug][0]{
           title,
           "name": author->name,
@@ -23,7 +23,7 @@ export default class BlogPost extends PureComponent {
           _updatedAt
         }`,
       { slug }
-    )
+    ) : {}
     return {post}
   }
 
