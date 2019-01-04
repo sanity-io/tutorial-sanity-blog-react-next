@@ -13,6 +13,10 @@
 ~/blog-backend
 > sanity init
 
+# Add a CORS-origin rule to allow the frontend to request data
+~/blog-backend
+> sanity cors add http://localhost:3000 --no-credentials
+
 # Insert the projectId and dataset name from Sanity in client.js
 ~/sanity-blog-tutorial
 > nano client.js
