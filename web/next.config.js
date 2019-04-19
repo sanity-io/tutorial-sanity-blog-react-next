@@ -9,7 +9,7 @@ module.exports = {
           (acc, slug) => ({
             '/': { page: '/' },
             ...acc,
-            [`/blog/${slug}`]: { page: 'Blog/Post', query: { slug } }
+            [`/p/${slug}`]: { page: '/post', query: { slug } }
           }),
           defaultPathMap
         )
