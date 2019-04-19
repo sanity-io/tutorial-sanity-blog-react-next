@@ -9,24 +9,24 @@
 ~/
 > npm i -g @sanity/cli
 
-# Install Sanity in a separate folder
-~/blog-backend
+# Initiate your own project in the studio folder
+~/this-blog/studio
 > sanity init
 
 # Add a CORS-origin rule to allow the frontend to request data
-~/blog-backend
+~/this-blog/studio
 > sanity cors add http://localhost:3000 --no-credentials
 
 # Insert the projectId and dataset name from Sanity in client.js
-~/sanity-blog-tutorial
+~/this-blog/web
 > nano client.js
 
 # Install frontend dependencies
-~/sanity-blog-tutorial
+~/this-blog/web
 > npm install
 
 # Run Next.js in development mode
-~/sanity-blog-tutorial
+~/this-blog/web
 > npm run dev
 ```
 
@@ -35,7 +35,7 @@
 [Read the tutorial](https://www.sanity.io/blog/tutorial-host-your-sanity-based-next-js-project-on-netlify?utm_source=github&utm_campaign=netlifyexport)
 
 ```sh
-~/sanity-blog-tutorial
+~/this-blog/web
 npm run export
 # exports your site as static files in /out
 ```
