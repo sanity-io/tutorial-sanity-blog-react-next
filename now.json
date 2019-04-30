@@ -1,0 +1,20 @@
+{
+    "name": "blog-with-sanity-and-next",
+    "version": 2,
+    "builds": [
+        { "src": "/studio/package.json", "use": "@now/static-build" },
+        { "src": "/web/package.json", "use": "@now/next" }
+    ],
+    "routes": [
+        { "src": "^/admin/(.*)", "dest": "/studio/dist/" },
+        { "src": "^/admin/static/(.*)", "dest": "/studio/dist/static/$1" },
+        { "src": "^/admin/favicon.ico", "dest": "/studio/dist/static/favicon.ico" },
+        {
+            "src": "/(.*)",
+            "dest": "/web/$1",
+            "headers": {
+                "x-request-path": "$1"
+            }
+        }
+    ]
+}
