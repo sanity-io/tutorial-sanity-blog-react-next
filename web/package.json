@@ -14,9 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
-    "@sanity/client": "^0.140.11",
+    "@sanity/client": "^0.140.32",
     "@sanity/image-url": "^0.140.12",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "groq": "^0.140.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
