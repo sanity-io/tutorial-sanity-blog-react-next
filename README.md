@@ -30,7 +30,16 @@
 > npm run dev
 ```
 
-## Deploy as a static site
+## Deploy on now
+
+```sh
+~/this-blog/web
+> npm i -g now
+> now login
+> now
+```
+
+## Deploy as a static site on Netlify
 
 [Read the tutorial](https://www.sanity.io/blog/tutorial-host-your-sanity-based-next-js-project-on-netlify?utm_source=github&utm_campaign=netlifyexport)
 

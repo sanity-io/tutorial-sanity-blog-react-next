@@ -5,7 +5,7 @@
   "description": "",
   "main": "package.json",
   "author": "Knut Melvær <knut.melvaer@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "test": "sanity check"
@@ -14,15 +14,15 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^0.140.35",
-    "@sanity/components": "^0.140.35",
-    "@sanity/core": "^0.140.34",
-    "@sanity/default-layout": "^0.140.35",
-    "@sanity/default-login": "^0.140.34",
-    "@sanity/desk-tool": "^0.140.35",
-    "prop-types": "^15.6",
-    "react": "^16.2",
-    "react-dom": "^16.2"
+    "@sanity/base": "^0.x",
+    "@sanity/components": "^0.x",
+    "@sanity/core": "^0.x",
+    "@sanity/default-layout": "^0.x",
+    "@sanity/default-login": "^0.x",
+    "@sanity/desk-tool": "^0.x",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {}
 }
