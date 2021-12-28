@@ -30,13 +30,13 @@
 > npm run dev
 ```
 
-## Deploy on now
+## Deploy on vercel
 
 ```sh
 ~/this-blog/web
-> npm i -g now
-> now login
-> now
+> npm i -g vercel
+> vercel login
+> vercel
 ```
 
 ## Deploy as a static site on Netlify
