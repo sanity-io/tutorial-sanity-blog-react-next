@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sanity/block-content-to-react": "^3.0.0",
+    "@portabletext/react": "^1.0.1",
     "@sanity/client": "^2.23.2",
     "@sanity/image-url": "^1.0.1",
     "express": "^4.17.2",
