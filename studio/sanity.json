@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "my-blog"
-  },
   "api": {
     "projectId": "0wopf0m0",
     "dataset": "production"
+  },
+  "project": {
+    "name": "my-blog"
   },
   "plugins": [
     "@sanity/base",
@@ -14,8 +14,10 @@
     "@sanity/default-login",
     "@sanity/desk-tool"
   ],
-  "parts": [{
-    "name": "part:@sanity/base/schema",
-    "path": "./schemas/schema.js"
-  }]
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    }
+  ]
 }
