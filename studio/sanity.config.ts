@@ -5,10 +5,10 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'remove-me-sanity-tutorial-blog',
+  title: 'sanity-tutorial-blog',
 
-  projectId: '4j7h4hcn',
-  dataset: 'production',
+  projectId: '[ your project id here ]',
+  dataset: '[ your data set id here ]',
 
   plugins: [deskTool(), visionTool()],
 
