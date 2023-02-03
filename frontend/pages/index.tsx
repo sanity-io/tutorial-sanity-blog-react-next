@@ -11,7 +11,7 @@ const Index = ({posts}) => {
             slug && (
               <li key={_id}>
                 <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-                  <a>{title}</a>
+                  {title}
                 </Link>{' '}
                 ({new Date(publishedAt).toDateString()})
               </li>
@@ -23,7 +23,7 @@ const Index = ({posts}) => {
 
 export async function getStaticProps() {
     const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()]|order(publishedAt desc)
+      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
     `)
     return {
       props: {
