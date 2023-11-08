@@ -1,35 +1,31 @@
-import Link from 'next/link'
-import groq from 'groq'
-import client from '../client'
+import client from "../client";
+import { GET_ALL_POSTS } from "./api/queries";
+import { GET_ALL_AUTHORS } from "./api/queries/authors";
+import getCardByType from "../utils/getCardbyType";
 
-const Index = ({posts}) => {
-    return (
-      <div>
-        <h1>Welcome to a blog!</h1>
-        {posts.length > 0 && posts.map(
-          ({ _id, title = '', slug = '', publishedAt = '' }) =>
-            slug && (
-              <li key={_id}>
-                <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-                  {title}
-                </Link>{' '}
-                ({new Date(publishedAt).toDateString()})
-              </li>
-            )
-        )}
+const Index = ({ posts, authors }) => {
+  return (
+    <div className="pageWrapper">
+      <h1>Welcome to a blog!</h1>
+      <div className="wrapper">
+        {Array.isArray(posts) && posts.map((post) => getCardByType(post))}
+
+        {Array.isArray(authors) &&
+          authors.map((author) => getCardByType(author))}
       </div>
-    )
-}
+    </div>
+  );
+};
 
 export async function getStaticProps() {
-    const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-    `)
-    return {
-      props: {
-        posts
-      }
-    }
+  const posts = await client.fetch(GET_ALL_POSTS);
+  const authors = await client.fetch(GET_ALL_AUTHORS);
+  return {
+    props: {
+      posts,
+      authors,
+    },
+  };
 }
 
-export default Index
+export default Index;
