@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+h1,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.seperator {
+  margin-bottom: 30px;
+  width: 35px;
+  height: 3px;
+  background: #777;
+  border: none;
+}
+
+.title {
+  text-align: center;
+}
+.title .row {
+  padding: 50px 0 0;
+}
+.title h1 {
+  text-transform: uppercase;
+}
+.title .seperator {
+  margin: 0 auto 10px;
+}
+
+.item {
+  margin-bottom: 30px;
+  min-height: 1px;
+  float: left;
+  width: 100%;
+}
+.item .item-in {
+  background: #fff;
+  padding: 40px;
+  position: relative;
+}
+.item .item-in:hover:before {
+  width: 100%;
+}
+.item .item-in::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 0%;
+  background: #333333;
+  right: 0px;
+  transition: width 0.4s;
+}
+
+.item h4 {
+  color: rgb(80, 80, 80);
+  font-size: 18px;
+  margin-top: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.item p {
+  font-size: 15px;
+}
+.item a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: #666666;
+  margin-top: 10px;
+  text-decoration: none;
+}

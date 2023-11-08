@@ -1,6 +1,6 @@
 import {defineField, defineType} from 'sanity'
 
-export default defineType({
+export default {
   name: 'author',
   title: 'Author',
   type: 'document',
@@ -47,4 +47,4 @@ export default defineType({
       media: 'image',
     },
   },
-})
+}

@@ -48,3 +48,5 @@
 npm run export
 # exports your site as static files in /out
 ```
+# SanitySearchTutorial
+# SanityGlobalSearch

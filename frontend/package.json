@@ -20,6 +20,7 @@
     "eslint-config-next": "13.1.6",
     "groq": "^3.2.6",
     "next": "13.1.6",
+    "next-sanity": "^5.5.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.5"
